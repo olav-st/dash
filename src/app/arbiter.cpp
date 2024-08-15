@@ -120,6 +120,8 @@ void Arbiter::set_page(Page *page, bool enabled)
 
 void Arbiter::set_fullscreen(bool fullscreen)
 {
+    fullscreen = false; // Hack to disable fullscreen because it is annoying
+
     this->layout().fullscreen.enabled = fullscreen;
 
     auto page = this->layout().curr_page;
