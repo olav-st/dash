@@ -50,8 +50,8 @@ rec {
     cmakeFlags = [ "-DGST_BUILD=TRUE" ];
 
     postInstall = ''
-      mkdir -p $out/lib
-      cp -r ../lib/plugins $out/lib
+      mkdir -p $out/lib/plugins/brightness
+      cp ../lib/plugins/brightness/libintel.so $out/lib/plugins/brightness
       qtWrapperArgs+=(--prefix GST_PLUGIN_SYSTEM_PATH_1_0 : "$GST_PLUGIN_SYSTEM_PATH_1_0")
       qtWrapperArgs+=(--prefix 'NIXPKGS_QT5_QML_IMPORT_PATH' ':' '${qtGStreamer}/lib/qt5/qml')
     '';
